@@ -38,6 +38,7 @@ class Warehouse:
 
 	# Adds an item to the warehouse	
 	def add_item(self, item):
+		self.items.append(item)
 		pass
 
 	# Returns the item in the warehouse with the most stock		
@@ -72,6 +73,10 @@ class TestAllMethods(unittest.TestCase):
 
 	## Check to see whether you can add an item to the warehouse
 	def test_add_item(self):
+		Target = Warehouse([self.item1,self.item2])
+		Target.add_item(self.item3)
+		Target.add_item(self.item4)
+		self.assertEqual(Target.items, [self.item1, self.item2, self.item3, self.item4])
 		pass
 
 
